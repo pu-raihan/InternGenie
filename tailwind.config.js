@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        emerald: {
+          500: '#42b883',
+          600: '#3aa876'
+        }
+      }
+    }
   },
   plugins: [],
 } 
