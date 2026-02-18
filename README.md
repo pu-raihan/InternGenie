@@ -7,3 +7,6 @@ InternGenie AI is an initiative designed to empower young job seekers and studen
 - Model : Xenova/all-MiniLM-L6-v2
 - Method : feature-extraction
 - Matching using : cosineSimilarity
+
+### Live Demo
+[InternGenie AI](https://intern-genie.vercel.app)
