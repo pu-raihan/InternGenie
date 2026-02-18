@@ -1,56 +1,29 @@
-<script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-const isAuthenticated = computed(() => !!localStorage.getItem('user'))
-const isAuthPage = computed(() => ['Login', 'Register'].includes(route.name))
-
-const logout = () => {
-  localStorage.removeItem('user')
-  window.location.href = '/login'
-}
-</script>
-
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <nav v-if="!isAuthPage" class="bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex">
-            <router-link to="/" class="flex items-center">
-              <span class="text-xl font-bold text-primary-600">InternGenie</span>
-            </router-link>
-          </div>
-          <div class="flex items-center">
-            <router-link v-if="!isAuthenticated" to="/login" class="btn-primary">
-              Login
-            </router-link>
-            <button v-else @click="logout" class="btn-primary">
-              Logout
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <router-view></router-view>
-    </main>
+  <div class="relative min-h-screen bg-gray-900 flex flex-col">
+    <Navbar />
+    <div :class="{ 'h-screen': isAuthPage, 'h-[calc(100dvh-64px)] mt-16': !isAuthPage }" class="overflow-auto">
+      <router-view />
+    </div>
   </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<script setup>
+
+import Navbar from './components/Navbar.vue'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+const route = useRoute()
+const isAuthPage = computed(() => ['Login', 'Register'].includes(route.name))
+
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+.logo-font {
+  font-family: "Reggae One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 </style>
