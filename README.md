@@ -1,5 +1,9 @@
-# Vue 3 + Vite
+## InternGenie AI
+InternGenie AI is an initiative designed to empower young job seekers and students with intelligent career guidance using advanced AI and Natural Language Processing (NLP). The platform enables users to input their skills, interests, and optionally upload their resume to receive personalized job recommendations that align with their unique profiles. By analyzing individual capabilities and matching them with current job market trends, the system helps bridge the gap between education and employment, guiding users toward opportunities where they can thrive.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+### Development
+- Frontend : Vue.js
+- Backend : Nodejs
+- Model : Xenova/all-MiniLM-L6-v2
+- Method : feature-extraction
+- Matching using : cosineSimilarity
